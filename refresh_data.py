@@ -135,7 +135,6 @@ def refresh_data():
 
     res = requests.post(insert_related_building_url, json=related_buildings_list, headers=header)
     print(res.text)
-
     print("refresh_data end :" + time.strftime(log_datetime_format))
 
 refresh_data()
