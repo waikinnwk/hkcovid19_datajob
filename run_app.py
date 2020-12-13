@@ -1,6 +1,6 @@
 from flask import Flask
-
 import os
+
 app = Flask(__name__)
 on_heroku = os.environ.get('ON_HEROKU')
 if __name__ == "__main__":
