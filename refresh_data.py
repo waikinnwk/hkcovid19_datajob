@@ -129,7 +129,11 @@ def refresh_data():
         'relatedCaseOth':related_case_oth
         })
 
-    res = requests.post('http://localhost:8091/hkcovid19caserelatedbuilding/addMultiple', json=related_buildings_list, headers=header)
+    insert_related_building_url = os.environ.get('INSERT_RELATED_BUILDING_URL')
+    if(insert_related_building_url is None):
+        insert_related_building_url = 'http://localhost:8091/hkcovid19caserelatedbuilding/addMultiple'
+
+    res = requests.post(insert_related_building_url, json=related_buildings_list, headers=header)
     print(res.text)
 
     print("refresh_data end :" + time.strftime(log_datetime_format))
