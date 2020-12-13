@@ -83,7 +83,7 @@ def refresh_data():
     day_summarys = get_day_summary()
     day_summarys_list = []
     for day_summary in day_summarys:
-        report_date_str = process_report_date(case[report_date_key])
+        report_date_str = process_report_date(day_summary[report_date_key])
         day_summarys_list.append({'asOfDate': report_date_str,
         'noOfConfirmedCases': day_summary[no_of_confirmed_cases_key],
         'noOfRuledOutCases': day_summary[no_of_ruled_out_cases_key],
