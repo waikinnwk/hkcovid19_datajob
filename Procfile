@@ -1,1 +1,1 @@
-worker: python refresh_data.py
+web: gunicorn run_app:app
